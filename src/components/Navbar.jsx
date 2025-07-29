@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <>
-         <nav className="navbar navbar-expand-lg bg-light p-4">
+      <nav className="navbar navbar-expand-lg bg-light p-4">
         <div className="container-fluid">
           <a className="navbar-brand fs-3 logo" href="#">
             <strong>
@@ -325,18 +326,20 @@ const Navbar = () => {
               <a href="#" className="px-4 text-decoration-none text-primary">
                 Book a demo
               </a>
+              <Link to="/LoginPage">
               <button
                 className="btn btn-outline-primary rounded-5 px-4 fs-5"
-                type="submit"
+                type="button"
               >
                 Login
               </button>
+              </Link>
             </div>
           </div>
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
