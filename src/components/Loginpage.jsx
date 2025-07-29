@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   return (
@@ -28,9 +29,11 @@ const LoginPage = () => {
                 className="form-control rounded-start-pill bg-dark text-white border-secondary"
                 placeholder="name@example.com"
               />
-              <button className="btn btn-outline-light rounded-end-pill">
+               <Link to="/HomePage">
+              <button className="btn btn-outline-light rounded-end-pill" type="button">
                 →
               </button>
+               </Link>
             </div>
 
             <div className="text-secondary mb-2">or</div>

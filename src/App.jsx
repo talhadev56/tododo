@@ -8,6 +8,7 @@ import {
   GetStartedButton,
 } from "./components/MiddelSection";
 import LoginPage from "./components/Loginpage";
+import HomePage from "./components/HomePage";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           }
         />
         <Route path="/LoginPage" element={<LoginPage />} />
+        <Route path="/HomePage" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
       
