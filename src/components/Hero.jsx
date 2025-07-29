@@ -1,15 +1,27 @@
 import React from "react";
 
+
 const Hero = () => {
   return (
     <>
-      <section  className="container">
+      <section className="container">
         <div className="text-center mt-5">
-          <div className="fs-1 fw-bolder line">
+          <div className="fs-1 fw-bolder line position-relative ">
             <strong>
               A simple to do list <br />
             </strong>
             <strong>to manage it all</strong>
+            <div className="img-fluid blue">
+              <div
+                style={{
+                  backgroundImage: "url('/blue-underline.svg')",
+                  backgroundRepeat: "no-repeat",
+                   backgroundPosition: 'center',
+                  height: "10px",
+                 
+                }}
+              ></div>
+            </div>
           </div>
           <p className="fs-5 mt-5">
             Easily manage your personal tasks, family projects, and <br />
@@ -17,6 +29,7 @@ const Hero = () => {
           </p>
         </div>
         <div className="d-flex justify-content-center mt-5">
+          <img src="../public/img.webp" alt="" className="side me-5" />
           <button
             type="button"
             className="btn btn-primary btn-lg rounded-5 px-4 py-3 "
@@ -36,8 +49,9 @@ const Hero = () => {
               />
             </svg>{" "}
           </button>
+          <img src="../public/image.webp" alt="" className="side ms-5" />
         </div>
-        <div className="text-center mt-4 ">
+        <div className="text-center mt-4">
           <span>Free Forever. No credit card.</span>
         </div>
       </section>

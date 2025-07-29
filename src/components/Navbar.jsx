@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 const Navbar = () => {
   return (
     <>
-         <nav className="navbar navbar-expand-lg bg-light p-4">
+      <nav className="navbar navbar-expand-lg bg-light p-4">
         <div className="container-fluid">
           <a className="navbar-brand fs-3 logo" href="#">
             <strong>
@@ -327,7 +327,8 @@ const Navbar = () => {
               </a>
               <button
                 className="btn btn-outline-primary rounded-5 px-4 fs-5"
-                type="submit"
+                type="submit" 
+                data-bs-toggle="modal" data-bs-target="#exampleModal"
               >
                 Login
               </button>
@@ -335,8 +336,44 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </>
-  )
-}
+  
+<div className="modal fade" id="exampleModal">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title fs-5" id="exampleModalLabel">Form</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+        <form>
+         <div class="d-grid gap-2">
+          <h3 className="text-center">Sign Up</h3>
+  <button class="btn btn-primary py-2 px-3 mt-2">Continue with Google</button>
 
-export default Navbar
+  <div class="input-group mt-3 mb-3">
+    <input
+      type="email"
+      class="form-control border-end-0 rounded-start-pill"
+      placeholder="Enter your work email"
+    />
+    <span class="input-group-text bg-white border-start-0 rounded-end-pill"
+       className="input-group-text bg-white border-start-0 rounded-end-5"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-right-circle" viewBox="0 0 16 16" > <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" /> </svg>
+    </span>
+  </div>
+</div>
+<p className="text-center">By using <a href="#"> Any.do</a> you accept our <br />
+Terms of Service and Privacy Policy</p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    </>
+  );
+};
+
+export default Navbar;

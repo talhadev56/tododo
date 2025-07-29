@@ -14,4 +14,9 @@ body,html{
 .line{
    line-height: 100%;
    margin-top: 85px;
+   z-index: 1;
+}
+.side{
+  width: 160px;
+  height: 64px;
 }
