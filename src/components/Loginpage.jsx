@@ -18,12 +18,12 @@ const LoginPage = () => {
           </div>
 
           <div className="w-100 w-md-50 p-4 d-flex flex-column align-items-center justify-content-center bg-dark">
-            <button className="btn btn-primary d-flex align-items-center gap-2 rounded-pill mb-3 px-4 py-2">
+            <button className="btn btn-primary d-flex align-items-center gap-2 rounded-pill mb-3 px-4 py-2" >
               <i class="fab fa-google" />
               Continue with Google
             </button>
 
-            <div className="input-group mb-3" style={{ maxWidth: "300px" }}>
+            <div className="input-group mb-3" style={{ maxWidth: "260px" }}>
               <input
                 type="email"
                 className="form-control rounded-start-pill bg-dark text-white border-secondary"

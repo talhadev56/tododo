@@ -15,4 +15,15 @@ body,html{
    line-height: 100%;
    margin-top: 85px;
 }
-
+.cursor{
+  cursor: pointer;
+}
+.color{
+  background-color: #0f0f0f;
+  opacity: 70%;
+  border: none;
+}
+.color:focus{
+   background-color: #0f0f0f;
+  opacity: 70%;
+}
