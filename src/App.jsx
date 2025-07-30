@@ -9,11 +9,22 @@ import {
 } from "./components/MiddelSection";
 import LoginPage from "./components/Loginpage";
 import HomePage from "./components/HomePage";
+import { useEffect, useState } from "react";
 
 const App = () => {
+  const [task,setTask] = useState(() => {
+    // fetch notes form localstorage when state is loading
+    let notes  = JSON.parse(localStorage.getItem("tasks")) ?? [];
+    return notes;
+  });
+  // for sideeffects
+  useEffect(()=>{
+    // update the localstorage data
+    localStorage.setItem("tasks",JSON.stringify(task));
+  } , [task]);
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
       <Routes>
         <Route
           path="/"
@@ -31,7 +42,9 @@ const App = () => {
         <Route path="/LoginPage" element={<LoginPage />} />
         <Route path="/HomePage" element={<HomePage />} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+
+    <HomePage task={task} setTask={setTask} />
       
     </>
   );

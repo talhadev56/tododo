@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 
-const HomePage = () => {
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState("");
+const HomePage = (props) => {
+  // const [tasks, setTasks] = useState([]);
+  // const [newTask, setNewTask] = useState("");
 
   const handleAdd = () => {
     const t = newTask.trim();
+    const taskObj = {
+      id: Date.now(),
+      title: t,
+    }
     if (!t) return;
-    setTasks([...tasks, t]);
+
+   
+    setTasks([...tasks, taskObj]);
     setNewTask("");
   };
 
