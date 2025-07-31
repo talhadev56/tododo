@@ -12,40 +12,50 @@ import HomePage from "./components/HomePage";
 import { useEffect, useState } from "react";
 
 const App = () => {
-  const [task,setTask] = useState(() => {
+  const [tasks, setTasks] = useState(() => {
     // fetch notes form localstorage when state is loading
-    let notes  = JSON.parse(localStorage.getItem("tasks")) ?? [];
+    let notes = JSON.parse(localStorage.getItem("tasks")) ?? [];
     return notes;
   });
+
+  const [newTask, setNewTask] = useState("");
+
   // for sideeffects
-  useEffect(()=>{
+  useEffect(() => {
     // update the localstorage data
-    localStorage.setItem("tasks",JSON.stringify(task));
-  } , [task]);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
   return (
     <>
-      {/* <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-            <Navbar />
-              <Hero />
-              <Main />
-              <TabSwitch />
-              <MiddelSection />
-              <GetStartedButton />
-            </>
-          }
-        />
-        <Route path="/LoginPage" element={<LoginPage />} />
-        <Route path="/HomePage" element={<HomePage />} />
-      </Routes>
-    </BrowserRouter> */}
-
-    <HomePage task={task} setTask={setTask} />
-      
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Navbar />
+                <Hero />
+                <Main />
+                <TabSwitch />
+                <MiddelSection />
+                <GetStartedButton />
+              </>
+            }
+          />
+          <Route path="/LoginPage" element={<LoginPage />} />
+          <Route
+            path="/HomePage"
+            element={
+              <HomePage
+                tasks={tasks}
+                setTasks={setTasks}
+                newTask={newTask}
+                setNewTask={setNewTask}
+              />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

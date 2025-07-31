@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
 const HomePage = (props) => {
-  // const [tasks, setTasks] = useState([]);
-  // const [newTask, setNewTask] = useState("");
+  
 
   const handleAdd = () => {
-    const t = newTask.trim();
+    const t = props.newTask.trim();
     const taskObj = {
       id: Date.now(),
       title: t,
@@ -13,8 +12,8 @@ const HomePage = (props) => {
     if (!t) return;
 
    
-    setTasks([...tasks, taskObj]);
-    setNewTask("");
+    props.setTasks([...props.tasks, taskObj]);
+    props.setNewTask("");
   };
 
   return (
@@ -189,8 +188,8 @@ const HomePage = (props) => {
                 type="text"
                 className="form-control "
                 placeholder="Add task"
-                value={newTask}
-                onChange={(e) => setNewTask(e.target.value)}
+                value={props.newTask}
+                onChange={(e) => props.setNewTask(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleAdd()}
                 style={{
                   backgroundColor: "#333",
@@ -202,9 +201,9 @@ const HomePage = (props) => {
                 <i className="bi bi-plus-lg"></i>
               </button>
             </div>
-            {tasks.length > 0 && (
+            {props.tasks.length > 0 && (
               <ul className="list-group list-group-flush mt-3">
-                {tasks.map((task, i) => (
+                {props.tasks.map((task, i) => (
                   <li
                     key={i}
                     className="list-group-item d-flex justify-content-between align-items-center"
@@ -214,12 +213,12 @@ const HomePage = (props) => {
                       color: "white",
                     }}
                   >
-                    {task}
+                    {task.title}
                     <i
                       className="bi bi-trash"
                       style={{ cursor: "pointer" }}
                       onClick={() =>
-                        setTasks(tasks.filter((_, idx) => idx !== i))
+                        props.setTasks(props.tasks.filter((_, idx) => idx !== i))
                       }
                     />
                   </li>
