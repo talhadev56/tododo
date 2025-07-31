@@ -22,7 +22,7 @@ const App = () => {
     // update the localstorage data
     localStorage.setItem("tasks",JSON.stringify(task));
   } , [task]);
-  return (
+  return ( 
     <>
       {/* <BrowserRouter>
       <Routes>
