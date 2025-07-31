@@ -23,9 +23,12 @@ const App = () => {
   // for sideeffects
   useEffect(() => {
     // update the localstorage data
+
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
   return (
+
+    
     <>
       <BrowserRouter>
         <Routes>
