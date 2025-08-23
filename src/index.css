@@ -14,9 +14,25 @@ body,html{
 .line{
    line-height: 100%;
    margin-top: 85px;
+
    z-index: 1;
 }
 .side{
   width: 160px;
   height: 64px;
 }
+
+
+.cursor{
+  cursor: pointer;
+}
+.color{
+  background-color: #0f0f0f;
+  opacity: 70%;
+  border: none;
+}
+.color:focus{
+   background-color: #0f0f0f;
+  opacity: 70%;
+}
+

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
   return (
@@ -325,17 +327,24 @@ const Navbar = () => {
               <a href="#" className="px-4 text-decoration-none text-primary">
                 Book a demo
               </a>
+              <Link to="/LoginPage">
               <button
                 className="btn btn-outline-primary rounded-5 px-4 fs-5"
+
                 type="submit" 
                 data-bs-toggle="modal" data-bs-target="#exampleModal"
+
+                type="button"
+
               >
                 Login
               </button>
+              </Link>
             </div>
           </div>
         </div>
       </nav>
+
   
 <div className="modal fade" id="exampleModal">
   <div className="modal-dialog">
@@ -375,5 +384,11 @@ Terms of Service and Privacy Policy</p>
     </>
   );
 };
+
+
+    </>
+  );
+};
+
 
 export default Navbar;
